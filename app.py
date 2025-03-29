@@ -50,5 +50,9 @@ def extract_audio_api():
     else:
         return jsonify({"error": "Failed to extract audio"}), 500
 
+@app.get("/", summary="Welcome endpoint", description="Displays a welcome message for the API")
+async def welcome():
+    return {"message": "Welcome to the Video to Audio Conversion API! Use /convert to extract audio from videos."}
+
 if __name__ == '__main__':
     app.run(debug=True)
